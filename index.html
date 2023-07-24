@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>Carrinho de compras</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- modelos de produto na lista e no carrinho -->
+    <div class="models">
+
+        <!-- produto na lista -->
+        <div class="produto-item">
+            <a href="">
+                <div class="produto-item--img"><img src="" /></div>
+                <div class="produto-item--add">+</div>
+            </a>
+            <div class="produto-item--price">R$ --</div>
+            <div class="produto-item--name">--</div>
+            
+        </div>
+
+        <!-- produto no carrinho -->
+        <div class="cart--item">
+            <img src="" />
+            <div class="cart--item-nome">--</div>
+            <div class="cart--item--qtarea">
+                <button class="cart--item-qtmenos">-</button>
+                <div class="cart--item--qt">1</div>
+                <button class="cart--item-qtmais">+</button>
+            </div>
+        </div>
+
+    </div>
+   
+
+    <!-- barra de navegação-->
+    <header>
+    
+        <h1>Hela by closet</h1>
+
+            <ul>
+                <li><a href="#" onclick="showAllProducts()">Todos os produtos</a></li>
+                <li><a href="#" onclick="filterProducts('feminino')">Feminino</a></li>
+                <li><a href="#" onclick="filterProducts('masculino')">Masculino</a></li>
+                <li><a href="#" onclick="filterProducts('infantil')">Infantil</a></li>
+              </ul>
+
+        
+              <div class="menu-openner">Carrinho 🛒 <span>0</span></div>
+
+              <form role="search" onsubmit="event.preventDefault(); searchProduct()">
+                <input  type="search" placeholder="Search" id="searchInput">
+                <button class="fas fa-search" type="submit"></button>
+            </form>
+        </header>
+    </header>
+    
+
+    <!-- conteudo principal, card dos produtos  -->
+    <main>
+        
+        <h2>Produtos</h2>
+
+        <div class="produto-area"></div>
+    </main>
+   
+
+
+
+    <!-- aside do carrinho, modal carrinho -->
+    <aside>
+        <div class="cart--area">
+            <div class="menu-closer">❌</div>
+            <h1>Seus produtos</h1>
+            <div class="cart"></div>
+            <div class="cart--details">
+                <div class="cart--totalitem subtotal">
+                    <span>Subtotal</span>
+                    <span>R$ --</span>
+                </div>
+            
+                <div class="cart--totalitem total big">
+                    <span>Total</span>
+                    <span>R$ --</span>
+                </div>
+                <div class="cart--finalizar">Finalizar a compra</div>
+
+        </div>
+    </aside>
+    
+
+    <!-- janela modal  -->
+    <div class="produtoWindowArea">
+        <div class="produtoWindowBody">
+            <div class="produtoInfo--cancelMobileButton">Voltar</div>
+            <div class="produtoBig">
+                <img src="" />
+            </div>
+            <div class="produtoInfo">
+                <h1>--</h1>
+                
+               
+                <div class="produtoInfo--pricearea">
+                    <div class="produtoInfo--sector">Preço</div>
+                    <div class="produtoInfo--price">
+                        <div class="produtoInfo--actualPrice">R$ --</div>
+                        <div class="produtoInfo--qtarea">
+                            <button class="produtoInfo--qtmenos">-</button>
+                            <div class="produtoInfo--qt">1</div>
+                            <button class="produtoInfo--qtmais">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="produtoInfo--addButton">Adicionar ao carrinho</div>
+                <div class="produtoInfo--cancelButton">Cancelar</div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="produtos.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
